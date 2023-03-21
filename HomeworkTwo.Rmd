@@ -1,6 +1,6 @@
 ---
 title: "Homework 2"
-author: "Write Your Name and Student ID Here!"
+author: "Hamza Aslan A.A.Barakat 21080637"
 output: pdf_document
 ---
 
@@ -16,44 +16,101 @@ opts_chunk$set(fig.align="center", fig.height=4, fig.width=5.5)
 **Question 1** Calculate how many minutes in January.
 
 ```{r}
-# Write Your Answer Here!
+# Set start and end dates for January
+start_date <- as.Date("2023-01-01")
+end_date <- as.Date("2023-01-31")
+
+# Calculate the number of days in January
+num_days <- as.numeric(difftime(end_date, start_date, units = "days")) + 1
+
+# Calculate the number of minutes in a day
+num_minutes_in_day <- 24 * 60
+
+# Calculate the total number of minutes in January
+total_minutes <- num_days * num_minutes_in_day
+
+# Print the result
+cat(paste("Total minutes in January is: ",total_minutes))
 ```
 
 **Question 2** Add the numbers 3 1 4 1 5 9 2 6 without *using the addition sign*.
 
 ```{r}
-# Write Your Answer Here!
+# Store the numbers in a vector
+numbers <- c(3, 1, 4, 1, 5, 9, 2, 6)
+
+# Use the sum() function to add up the numbers
+result <- sum(numbers)
+
+# Print the result
+cat(paste("The sum of", paste(numbers, collapse = ", "), "is", result))
 ```
 
 **Question 3** Create a vector named `x` containing the series -1, -0.9, ..., 0, 0.1, ..., 0.9, 1 and print the result.
 
 ```{r}
-# Write Your Answer Here!
+# Create a vector containing the numbers from -1 to 1 in steps of 0.1
+x <- seq(-1, 1, by = 0.1)
+
+# Print the vector
+cat("The vector x contains the following elements:\n\n")
+cat(x)
 ```
 
 **Question 4** How do we get R to print the text "SBF!" 30 times without repeatingly typing it?
 
 ```{r}
-# Write Your Answer Here!
+# Use the rep() function to repeat "SBF!" 30 times
+message <- rep("SBF!", 30)
+
+# Print the message
+cat(paste(message, collapse = " "))
 ```
 
 **Question 5** Create two vectors named "wizards" and "ranking".
 Let the "wizards" include the names Harry, Ron, Fred, George and Sirius, while the "ranking" includes the numbers 4, 2, 5, 1, and 3.
 
 ```{r}
-# Write Your Answer Here!
+# Create the "wizards" vector
+wizards <- c("Harry", "Ron", "Fred", "George", "Sirius")
+
+# Create the "ranking" vector
+ranking <- c(4, 2, 5, 1, 3)
+
+# Print the vectors
+cat("The wizards are:\n")
+cat(wizards, sep = ", ")
+cat("\n\nThe ranking of the wizards is:\n")
+cat(ranking, sep = ", ")
 ```
 
 **Question 6** Print/extract the second element of the wizards vector.
 
 ```{r}
-# Write Your Answer Here!
+# Create the "wizards" vector
+wizards <- c("Harry", "Ron", "Fred", "George", "Sirius")
+
+# Extract the second element of the "wizards" vector
+second_wizard <- wizards[2]
+
+# Print the second wizard's name
+cat("The second wizard in the list is:", second_wizard)
 ```
 
 **Question 7** Replace the names Fred, George and Sirius in the vector 'wizards' with the names Hermione, Ginny, and Malfoy.
 
 ```{r}
-# Write Your Answer Here!
+# Create the "wizards" vector
+wizards <- c("Harry", "Ron", "Fred", "George", "Sirius")
+
+# Create a vector of replacement names
+replacement_names <- c("Hermione", "Ginny", "Malfoy")
+
+# Replace the names in the "wizards" vector
+wizards[c(3, 4, 5)] <- replacement_names
+
+# Print the updated "wizards" vector
+cat("The updated wizards list is:", wizards, sep = "\n")
 ```
 
 **Question 8** Anyone who hasn't read Harry Potter (like the professor of this class) needs tags to know who these characters are.
@@ -61,7 +118,13 @@ Name the elements of the `wizards` vector as **Lead**, **Friend**, **Friend**, *
 Print the results.
 
 ```{r}
-# Write Your Answer Here!
+wizards <- c("Harry", "Ron", "Hermione", "Ginny", "Malfoy")
+
+# Rename the elements of the "wizards" vector
+names(wizards) <- c("Lead", "Friend", "Friend", "Wife", "Rival")
+
+# Print the renamed "wizards" vector
+wizards
 ```
 
 **Question 9** 26 students entered the PEC206 midterm exam.
@@ -70,7 +133,18 @@ Save test scores in a vector named 'scores'.
 Calculate the mean, median, and range of exam grades.
 
 ```{r}
-# Write Your Answer Here!
+# Create the "scores" vector
+scores <- c(18, 95, 76, 90, 84, 83, 80, 79, 63, 76, 55, 78, 90, 81, 88, 89, 92, 73, 83, 72, 85, 66, 77, 82, 99, 87)
+
+# Calculate the mean, median, and range of the "scores" vector
+mean_score <- mean(scores)
+median_score <- median(scores)
+range_score <- range(scores)
+
+# Print the results
+cat("The mean score is:", mean_score, "\n")
+cat("The median score is:", median_score, "\n")
+cat("The range of scores is:", range_score[1], "-", range_score[2], "\n")
 ```
 
 **Question 10** In 2015, Nilay had an annual income of 22,000 TL, and total expenses of 3,000 TL.
@@ -81,5 +155,17 @@ To save this information, create 3 different vectors named 'years', 'income' and
 Calculate Nilay's annual savings and save these values in a vector named 'savings'.
 
 ```{r}
-# Write Your Answer Here!
+# Create the "years", "income", and "expenses" vectors
+years <- c(2015, 2016, 2017, 2018)
+income <- c(22000, 67000, 70000, 72000)
+expenses <- c(3000, 23000, 32000, 35000)
+
+# Calculate the annual savings for each year and save the results in the "savings" vector
+savings <- income - expenses
+
+# Print the "years", "income", "expenses", and "savings" vectors
+cat("Years:", years, "\n")
+cat("Income:", income, "\n")
+cat("Expenses:", expenses, "\n")
+cat("Savings:", savings, "\n")
 ```
